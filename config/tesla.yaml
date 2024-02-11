@@ -1,0 +1,32 @@
+assistants:
+  - identifier: backend
+    name: Backend
+    model: "codellama"
+    config_list:
+      model: "mistral"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    system_message: "Do what you are being told and do it well."
+
+user:
+  identifier: user
+  name: User
+  config_list:
+    model: "llama2"
+    base_url: http://localhost:11434/v1
+    api_key: "NULL"
+  human_input_mode: NEVER
+  max_consecutive_auto_reply: 10
+  code_execution_config:
+    work_dir: tesla
+    use_docker: false
+
+manager:
+  identifier: manager
+  name: Manager
+  config_list:
+    model: "llama2"
+    base_url: http://localhost:11434/v1
+    api_key: "NULL"
+
+task: "Plot a chart of TSLA stock price change YTD and save in a file. Get information using yfinance. Collaborate effectively, share updates in the group chat, and consider the project complete when all components are seamlessly integrated. The success of this project relies on your collective expertise and cooperation. Happy coding!"

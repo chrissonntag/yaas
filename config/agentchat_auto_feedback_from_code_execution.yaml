@@ -1,0 +1,25 @@
+assistants:
+  - identifier: backend
+    name: assistent
+    cache_seed: 41
+    config_list:
+      model: "mistral"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    temperature: 0
+
+user:
+  identifier: user
+  name: user_proxy
+  config_list:
+    model: "llama2"
+    base_url: http://localhost:11434/v1
+    api_key: "NULL"
+  human_input_mode: NEVER
+  max_consecutive_auto_reply: 10
+  code_execution_config:
+    work_dir: coding
+    use_docker: true
+
+#task: "What date is today? Compare the year-to-date gain for META and TESLA."
+task: "Plot a chart of their stock price change YTD and save to stock_price_ytd.png."

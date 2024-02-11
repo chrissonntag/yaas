@@ -1,0 +1,34 @@
+assistants:
+  - identifier: Coder
+    name: Coder
+    cache_seed: 42
+    config_list:
+      model: "mistral"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+  - identifier: Product_manager
+    name: Product_manager
+    system_message: "Creative in software product ideas."
+    cache_seed: 42
+    config_list:
+      model: "mistral"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+
+user:
+  identifier: User_proxy
+  name: user_proxy
+  system_message: "A human admin."
+  config_list:
+    model: "openchat"
+    base_url: http://localhost:11434/v1
+    api_key: "NULL"
+  human_input_mode: TERMINATE
+  max_consecutive_auto_reply: 10
+  code_execution_config:
+    last_n_messages: 2
+    work_dir: groupchat
+    use_docker: true
+
+#task: "What date is today? Compare the year-to-date gain for META and TESLA."
+task: "Find a latest paper about gpt-4 on arxiv and find its potential applications in software."

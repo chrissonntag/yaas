@@ -1,0 +1,61 @@
+assistants:
+  - identifier: backend
+    name: Backend
+    config_list:
+      model: "codellama"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    system_message: "Implement a Python backend to manage ToDos. Include functionality for adding, deleting, and editing tasks. Ensure proper error handling and validation. Terminate the task once you believe the backend is fully functional."
+  - identifier: frontend
+    name: Frontend
+    config_list:
+      model: "codellama"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    system_message: "Develop the HTMLx frontend to seamlessly interact with the backend. Integrate features for displaying, adding, deleting, and editing ToDos. Ensure a responsive and user-friendly interface. Terminate the task upon completion and satisfactory UI functionality."
+  - identifier: sql
+    name: SQL
+    config_list:
+      model: "codellama"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    system_message: "Design a robust SQL database structure to store and manage ToDos. Optimize for performance and scalability. Provide a clear schema and relationships. Terminate the task once you believe the database architecture is well-optimized and meets the project requirements."
+  - identifier: javascript
+    name: JavaScript
+    config_list:
+      model: "codellama"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    system_message: "Develop JavaScript functions to support dynamic interactions on the frontend. Ensure smooth communication with the backend and provide necessary functionality for an enhanced user experience. Terminate the task once the frontend and backend interactions are seamless."
+  - identifier: stylesheet
+    name: Stylesheet
+    config_list:
+      model: "codellama"
+      base_url: http://localhost:11434/v1
+      api_key: "NULL"
+    system_message: "Apply CSS styling to enhance the frontend's visual appeal. Ensure the design is responsive and aligns with modern UI/UX principles. Terminate the task once you believe the frontend is visually appealing and meets the specified styling requirements."
+
+user:
+  identifier: user
+  name: User
+  config_list:
+    model: "llama2"
+    base_url: http://localhost:11434/v1
+    api_key: "NULL"
+  human_input_mode: NEVER
+  max_consecutive_auto_reply: 10
+  system_message: "Coordinate communication between the backend programmer, frontend programmer, SQL specialist, JavaScript developer, and CSS specialist. Facilitate collaboration, address any communication issues, and ensure a cohesive integration of all components. Reply TERMINATE if the task has been solved at full satisfaction. Otherwise, reply CONTINUE, or the reason why the task is not solved yet."
+  code_execution_config:
+    last_n_messages: 2
+    work_dir: todo
+    use_docker: true
+
+manager:
+  identifier: manager
+  name: Manager
+  config_list:
+    model: "llama2"
+    base_url: http://localhost:11434/v1
+    api_key: "NULL"
+
+task: "Develop a comprehensive ToDo application by collaboratively utilizing your specialized skills. The application should consist of a Python backend for adding, deleting, and editing ToDos, an HTMLx frontend for seamless user interaction, a well-optimized SQL database for efficient data storage, JavaScript functions for dynamic frontend interactions, and visually appealing CSS styling. Each agent should consider their task complete when they believe their assigned component functions as intended and aligns with the overall project goals. Communication is key for successful collaboration. The User Proxy and Group Chat Manager play pivotal roles in ensuring a smooth workflow. Collaborate effectively, share updates in the group chat, and consider the project complete when all components are seamlessly integrated. The success of this project relies on your collective expertise and cooperation. Happy coding!"

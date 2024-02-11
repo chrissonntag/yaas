@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "yaas"
+version = "0.1.0"
+description = "Yet another AutoGen Setup"
+authors = ["Christian Sonntag <cs@home.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+pyautogen = "^0.2.13"
+PyYAML = "^6.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
