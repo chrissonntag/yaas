@@ -60,7 +60,7 @@ for assistant in full_configuration["assistants"]:
 
 if "manager" in full_configuration:
     # If there is a manager, prepend the user proxy to the agents list
-    agents.prepend(user_proxy)
+    agents = [user_proxy] + agents
     # Create a group chat and a manager
     groupchat = autogen.GroupChat(agents=agents, messages=[], max_round=10)
     manager = autogen.GroupChatManager(
