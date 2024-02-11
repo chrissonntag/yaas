@@ -47,7 +47,7 @@ user:
   system_message: "Coordinate communication between the backend programmer, frontend programmer, SQL specialist, JavaScript developer, and CSS specialist. Facilitate collaboration, address any communication issues, and ensure a cohesive integration of all components. Reply TERMINATE if the task has been solved at full satisfaction. Otherwise, reply CONTINUE, or the reason why the task is not solved yet."
   code_execution_config:
     last_n_messages: 2
-    work_dir: todo
+    work_dir: .cache/todo
     use_docker: true
 
 manager:
