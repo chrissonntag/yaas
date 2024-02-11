@@ -1,7 +1,6 @@
 assistants:
   - identifier: backend
-    name: assistent
-    cache_seed: 41
+    name: assistant
     config_list:
       model: "mistral"
       base_url: http://localhost:11434/v1

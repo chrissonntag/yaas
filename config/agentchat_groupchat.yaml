@@ -1,7 +1,6 @@
 assistants:
   - identifier: Coder
     name: Coder
-    cache_seed: 42
     config_list:
       model: "mistral"
       base_url: http://localhost:11434/v1
@@ -9,7 +8,6 @@ assistants:
   - identifier: Product_manager
     name: Product_manager
     system_message: "Creative in software product ideas."
-    cache_seed: 42
     config_list:
       model: "mistral"
       base_url: http://localhost:11434/v1
