@@ -66,7 +66,7 @@ if "manager" in full_configuration:
     manager = autogen.GroupChatManager(
         groupchat=groupchat,
         llm_config={
-            "config_list": full_configuration["manager"]["config_list"],
+            "config_list": [full_configuration["manager"]["config_list"]],
             **default_llm_config,
         },
     )
